@@ -48,7 +48,8 @@ De novo extraction of mutational signatures was performed using [`SigProfilerExt
 Code used for extraction from within SigProfiler Docker container:
 ```python
 # BCFtools to extract SNVs within MERs for each patient
-# for vcf in `ls -1 *.vcf.gz`; do bcftools view -O v -R MERs.bed ${vcf} | bgzip > merSubset/"${vcf}"; done
+# for vcf in `ls -1 *.vcf.gz`; do bcftools view -O v -R MERs.bed ${vcf} \
+#  | bgzip > merSubset/"${vcf}"; done
 
 # Now run the extraction
 sig.sigProfilerExtractor(
@@ -78,7 +79,8 @@ os.system('apt-get update && apt-get install -y wget')
 os.system('pip install SigProfilerTopography')
 from SigProfilerTopography import Topography as topography
 from SigProfilerMatrixGenerator import install as genInstall
-genInstall.install(genome="GRCh38",offline_files_path="/data/ref/",rsync=False,bash=True)
+genInstall.install(
+  genome="GRCh38",offline_files_path="/data/ref/",rsync=False,bash=True)
 
 topography.runAnalyses(
   genome="GRCh38",inputDir="/data/mgp/",outputDir="/data/topography/",
@@ -113,7 +115,8 @@ Clustered mutation events were found and classified using [`SigProfilerClusters`
 ```python
 from SigProfilerMatrixGenerator import install as genInstall
 from SigProfilerMatrixGenerator.scripts import SigProfilerMatrixGeneratorFunc as matGen
-genInstall.install(genome="GRCh38",offline_files_path="/temp/data/ref/",rsync=False,bash=True)
+genInstall.install(
+  genome="GRCh38",offline_files_path="/data/ref/",rsync=False,bash=True)
 
 from SigProfilerSimulator import SigProfilerSimulator as sigSim
 sigSim.SigProfilerSimulator(
