@@ -4,7 +4,7 @@ rearrangement and disease progression in multiple myeloma" from Blaney, P. et al
 
 ## Primary Analysis and Visualization
 The crux of all data analysis and visualization were performed in `R` with the source
-code found in `index.qmd` and the rendered HTML at [`_manuscript/index.html](https://github.com/pblaney/myelomaNoncodingGenome/blob/main/_manuscript/index.html).
+code found in `index.qmd` and the rendered HTML at [`_manuscript/index.html`](https://github.com/pblaney/myelomaNoncodingGenome/blob/main/_manuscript/index.html).
 
 ## Data Generation
 
